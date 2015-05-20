@@ -1,0 +1,19 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.aware.plugin.SolarCharger1">
+    <uses-permission android:name="com.aware.READ_CONTEXT_DATA" />
+    <uses-permission android:name="com.aware.WRITE_CONTEXT_DATA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <application android:allowBackup="true" android:label="@string/app_name"
+        android:icon="@drawable/ic_launcher" >
+        <service android:name="com.aware.plugin.SolarCharger1.Plugin" android:exported="true" />
+
+
+        <provider android:name="com.aware.plugin.SolarCharger1.Provider" android:authorities="${applicationId}.provider.SolarCharger1" android:exported="true" android:readPermission="com.aware.READ_CONTEXT_DATA" android:writePermission="com.aware.WRITE_CONTEXT_DATA"/>
+        <activity
+            android:name=".Settings"
+            android:label="@string/app_name"
+            android:exported="true" >
+        </activity>
+    </application>
+</manifest>

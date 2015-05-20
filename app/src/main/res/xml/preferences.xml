@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+        android:key="status_plugin_SolarCharger1"
+        android:defaultValue="false"
+        android:persistent="true"
+        android:summary="Activate/Deactivate SolarCharger plugin"
+        android:title="Active" />
+
+    <EditTextPreference
+        android:defaultValue="1"
+        android:key="mode_plugin_SolarCharger1"
+        android:persistent="true"
+        android:summary="Charger Mode"
+        android:title="Mode 1 = Solar, 2 = PC USB, 3 = AC"
+        android:inputType="numberDecimal" />
+</PreferenceScreen>

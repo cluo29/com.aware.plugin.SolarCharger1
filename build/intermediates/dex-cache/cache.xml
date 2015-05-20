@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="055783146ba9654a725442563be78cad303aad1f">
+        <dex dex="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\pre-dexed\debug\classes-da8fda078b8127b602781ef8fe8e34d690202b27.jar" />
+    </item>
+    <item
+        jar="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.0.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\pre-dexed\debug\classes-390f8744a86dc3dabbeeecbd53ec81c55a6ed29c.jar" />
+    </item>
+    <item
+        jar="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="0e8228b4bc69c6a2c8d7c18498a77e53417d2574">
+        <dex dex="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\pre-dexed\debug\classes-442665bb068b6ab886e9e945b8c924c4913141f5.jar" />
+    </item>
+    <item
+        jar="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\libs\internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-baad673c0fcf3f86b36e9348ef758edb851618ad.jar" />
+    </item>
+    <item
+        jar="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appstate\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="7ff613bf78ab057293892fdbd4169eda899c89b9">
+        <dex dex="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\pre-dexed\debug\classes-7e226c9c630aaac8ef051ae331ad17a0e0b04f59.jar" />
+    </item>
+    <item
+        jar="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4c93d99d454c975536bbe3b42283eee847f03ea3">
+        <dex dex="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\pre-dexed\debug\classes-11e268a5f2dc2c6d49705c5bd7277f7435b655c9.jar" />
+    </item>
+    <item
+        jar="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="9224bc4c54ba95147c7eabd874573763c07cb6be">
+        <dex dex="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\pre-dexed\debug\classes-87de35a6231a7c296693917a1d3150b84424e1f5.jar" />
+    </item>
+    <item
+        jar="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\exploded-aar\com.awareframework\aware-core\3.3.4\libs\zbar.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="0a7b88ba1496a0b4af76069ad40dacd3897149e0">
+        <dex dex="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\pre-dexed\debug\zbar-a180aba71f58408cfa9208b9891e3c5b32ba199c.jar" />
+    </item>
+    <item
+        jar="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73ccb92b70112f2e463e415ef8d7275de7da6516">
+        <dex dex="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\pre-dexed\debug\classes-cba2dbc3da7c47cd50a50a25feb55cf973c45242.jar" />
+    </item>
+    <item
+        jar="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\pre-dexed\debug\classes-0bb317057d1e2d4b73e7157196d5b70b05f7781f.jar" />
+    </item>
+    <item
+        jar="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4cd0b093824b3228fffc21ea369b98d0b1db6566">
+        <dex dex="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\pre-dexed\debug\classes-2aac706a27e205cd56f69404ae25b72ec6ba8040.jar" />
+    </item>
+    <item
+        jar="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="41b3870cbe5fa546d8095b5b89d42cb69f3dd175">
+        <dex dex="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\pre-dexed\debug\classes-25c23b2a225ff83f1ec95be0fcea3dda1538a339.jar" />
+    </item>
+    <item
+        jar="D:\adt-bundle\sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-35b1f58ff586a0c64175c565c155a1ab479bd96f.jar" />
+    </item>
+    <item
+        jar="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\exploded-aar\com.awareframework\aware-core\3.3.4\libs\mqtt-client-0.4.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="02315d1759d01e52495e040e6e538aaa2e91c7f6">
+        <dex dex="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\pre-dexed\debug\mqtt-client-0.4.0-430e0892bc688a637c815dd2f68ebba7d50aec4b.jar" />
+    </item>
+    <item
+        jar="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="17f8750d5c0749e44dd7c54aa390d9c937803825">
+        <dex dex="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\pre-dexed\debug\classes-4b69d151329ff8cdd12ba744a90963f1c73ec7c5.jar" />
+    </item>
+    <item
+        jar="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e3d791b42eaa90416cd0b2d2e608092794a3baa4">
+        <dex dex="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\pre-dexed\debug\classes-29ac804136f84df4ab17e8cfdddae86b4a6fc0a4.jar" />
+    </item>
+    <item
+        jar="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\exploded-aar\com.awareframework\aware-core\3.3.4\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1be33e0d4632f6de800c59021fd93f3b557f7528">
+        <dex dex="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\pre-dexed\debug\classes-1425aac21b391396f4b4623b914439929fe7a7c9.jar" />
+    </item>
+    <item
+        jar="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ef5f051e7308febe289dc93c67c5f32785b4260a">
+        <dex dex="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\pre-dexed\debug\classes-8e2144230051f3111c26de27febe5db115a8cb83.jar" />
+    </item>
+    <item
+        jar="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a08d65794b844d8e7540bf9a33859bf3b2482d7f">
+        <dex dex="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\pre-dexed\debug\classes-1c18c29af52813a1684649eb36af653d7f6b917d.jar" />
+    </item>
+    <item
+        jar="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="3c0b099f9de16b265ecd6122fcb603e7d0d29f90">
+        <dex dex="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\pre-dexed\debug\classes-4e1ea3463f3d88a7cfa6693ddf6821c9e721101f.jar" />
+    </item>
+    <item
+        jar="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\22.0.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="11842de6a309c447b3a3d60d73ad637a87c58994">
+        <dex dex="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\pre-dexed\debug\classes-451feeeb4c3626e511ab582fea3067512e834d92.jar" />
+    </item>
+    <item
+        jar="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="29fd6d3794b71491c2789708cd8d03c71feb8954">
+        <dex dex="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\pre-dexed\debug\classes-2fca768f6c302b7b1d81f67d7fb12d0c1fe71e2d.jar" />
+    </item>
+    <item
+        jar="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1c5a76debf0c2857ccad422c4a80ed785982f8df">
+        <dex dex="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\pre-dexed\debug\classes-26d2fb0ce39e4b5172e997f0c3d694f9cd69f0de.jar" />
+    </item>
+    <item
+        jar="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a96b762bde4139de855735f175ec4d17dca55a6d">
+        <dex dex="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\pre-dexed\debug\classes-6a3a6d85b3886f3a5ebed6b864cc7a1077dd2001.jar" />
+    </item>
+    <item
+        jar="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="fb04b12526b0073c7fb1ebb70c5842d82ee95596">
+        <dex dex="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\pre-dexed\debug\classes-6a67306ab27e59b5709789c4869cbdcffc040d42.jar" />
+    </item>
+    <item
+        jar="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="3033cc3a2c68dff3e5b646d6d084bdbdf7d00b25">
+        <dex dex="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\pre-dexed\debug\classes-78c499adc0d3bd680502191e15183692456f6db7.jar" />
+    </item>
+    <item
+        jar="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c976518693e89ad44fbfccfc654941eaec198d08">
+        <dex dex="E:\Development\WWW\com.aware.plugin.SolarCharger1\app\build\intermediates\pre-dexed\debug\classes-30ae5ef9061c125b27588366187c53e5c73a2f1d.jar" />
+    </item>
+
+</items>
