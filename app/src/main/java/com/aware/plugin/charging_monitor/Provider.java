@@ -21,7 +21,7 @@ import com.aware.Aware;
 import com.aware.utils.DatabaseHelper;
 
 public class Provider extends ContentProvider {
-    public static final int DATABASE_VERSION = 5;
+    public static final int DATABASE_VERSION = 6;
     /**
      * Provider authority: com.aware.plugin.charging_monitor.provider.charging_monitor
      */
@@ -46,10 +46,10 @@ public class Provider extends ContentProvider {
         public static final String CHARGER_TYPE = "charger_type";   //1=solar, 2= pc ,3=ac
         public static final String PERCENTAGE_START = "percentage_start";    // power percentages
         public static final String PERCENTAGE_END = "percentage_end";    //
-        public static final String TIME_START = "time_start";    //timestamp
-        public static final String TIME_END = "time_end";   //
+        public static final String TIME_START = "double_time_start";    //timestamp
+        public static final String TIME_END = "double_time_end";   //
         public static final String SPEED = "double_speed";   // speed for this charge
-        public static final String TIME_DISCHARGE = "time_discharge";   //
+        public static final String TIME_DISCHARGE = "double_time_discharge";   //
         public static final String SPEED_DISCHARGE = "double_speed_discharge";   // speed for discharge
         public static final String PERCENTAGE_START_DISCHARGE  = "percentage_start_discharge";    // power percentages
         public static final String PERCENTAGE_END_DISCHARGE  = "percentage_end_discharge";    //
@@ -61,10 +61,10 @@ public class Provider extends ContentProvider {
             Charging_Monitor_Data.CHARGER_TYPE + " integer default 0," +
             Charging_Monitor_Data.PERCENTAGE_START + " integer default 0," +
             Charging_Monitor_Data.PERCENTAGE_END + " integer default 0," +
-            Charging_Monitor_Data.TIME_START + " integer default 0," +
-            Charging_Monitor_Data.TIME_END + " integer default 0," +
+            Charging_Monitor_Data.TIME_START + " real default 0," +
+            Charging_Monitor_Data.TIME_END + " real default 0," +
             Charging_Monitor_Data.SPEED + " real default 0," +
-            Charging_Monitor_Data.TIME_DISCHARGE + " integer default 0," +
+            Charging_Monitor_Data.TIME_DISCHARGE + " real default 0," +
             Charging_Monitor_Data.SPEED_DISCHARGE + " real default 0," +
             Charging_Monitor_Data.PERCENTAGE_START_DISCHARGE + " integer default 0," +
             Charging_Monitor_Data.PERCENTAGE_END_DISCHARGE + " integer default 0," +
