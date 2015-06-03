@@ -19,7 +19,7 @@ import com.aware.utils.IContextCard;
 public class ContextCard implements IContextCard {
 
     //Set how often your card needs to refresh if the stream is visible (in milliseconds)
-    private int refresh_interval = 30 * 1000; //30s
+    private int refresh_interval = 1 * 1000; //1s
 
     private Handler uiRefresher = new Handler(Looper.getMainLooper());
     private Runnable uiChanger = new Runnable() {
@@ -29,6 +29,14 @@ public class ContextCard implements IContextCard {
             Cursor latest = sContext.getContentResolver().query(Provider.Charging_Monitor_Data.CONTENT_URI, null, null, null, Charging_Monitor_Data.TIMESTAMP + " DESC LIMIT 1");
             if (latest != null && latest.moveToFirst()) {
                 if( card != null ) {
+                    counter_txt.setVisibility(View.GONE);
+                    counter_txt2.setVisibility(View.VISIBLE);
+                    counter_txt3.setVisibility(View.VISIBLE);
+                    counter_txt4.setVisibility(View.VISIBLE);
+                    counter_txt5.setVisibility(View.VISIBLE);
+                    counter_txt6.setVisibility(View.VISIBLE);
+                    counter_txt7.setVisibility(View.VISIBLE);
+                    counter_txt8.setVisibility(View.VISIBLE);
                     counter_txt2.setText("Charging Monitor");
                     counter_txt3.setText("Charging % start: "+latest.getInt(latest.getColumnIndex(Provider.Charging_Monitor_Data.PERCENTAGE_START)));
                     counter_txt4.setText("Charging % end: "+latest.getInt(latest.getColumnIndex(Provider.Charging_Monitor_Data.PERCENTAGE_END)));
@@ -38,7 +46,15 @@ public class ContextCard implements IContextCard {
                     counter_txt8.setText("Discharging rate in %/minute: " + String.format("%.3f", latest.getDouble(latest.getColumnIndex(Provider.Charging_Monitor_Data.SPEED_DISCHARGE))));
                 }
             } else {
-                counter_txt.setText("no data");
+                counter_txt.setVisibility(View.VISIBLE);
+                counter_txt.setText("Please connect to charger to begin.");
+                counter_txt2.setVisibility(View.GONE);
+                counter_txt3.setVisibility(View.GONE);
+                counter_txt4.setVisibility(View.GONE);
+                counter_txt5.setVisibility(View.GONE);
+                counter_txt6.setVisibility(View.GONE);
+                counter_txt7.setVisibility(View.GONE);
+                counter_txt8.setVisibility(View.GONE);
             }
             if (latest != null && !latest.isClosed()) latest.close();
 

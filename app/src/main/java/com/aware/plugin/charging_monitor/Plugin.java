@@ -262,6 +262,8 @@ public class Plugin extends Aware_Plugin {
 
         Aware.setSetting(this, Aware_Preferences.STATUS_BATTERY, true);
         Aware.startPlugin(this, getPackageName());
+
+        sendBroadcast(new Intent(Aware.ACTION_AWARE_REFRESH));
     }
 
     @Override
