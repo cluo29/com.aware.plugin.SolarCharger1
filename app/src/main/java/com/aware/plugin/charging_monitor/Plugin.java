@@ -19,25 +19,7 @@ public class Plugin extends Aware_Plugin {
 
     public static final String ACTION_AWARE_PLUGIN_CHARGING_MONITOR = "ACTION_AWARE_PLUGIN_CHARGING_MONITOR";
 
-    public static final String EXTRA_CHARGER_TYPE = "CHARGER_TYPE";
-
-    public static final String EXTRA_PERCENTAGE_START = "PERCENTAGE_START";
-
-    public static final String EXTRA_PERCENTAGE_END = "PERCENTAGE_END";
-
-    public static final String EXTRA_TIME_START = "TIME_START";
-
-    public static final String EXTRA_TIME_END = "TIME_END";
-
-    public static final String EXTRA_SPEED = "SPEED";
-
-    public static final String EXTRA_TIME_DISCHARGE = "TIME_DISCHARGE";
-
-    public static final String EXTRA_SPEED_DISCHARGE = "SPEED_DISCHARGE";
-
-    public static final String EXTRA_PERCENTAGE_START_DISCHARGE = "PERCENTAGE_START_DISCHARGE";
-
-    public static final String EXTRA_PERCENTAGE_END_DISCHARGE = "PERCENTAGE_END_DISCHARGE";
+    public static final String EXTRA_DATA = "data";
 
     private static int charger_type = 0; //1=solar, 2= pc ,3=ac
 
@@ -67,6 +49,9 @@ public class Plugin extends Aware_Plugin {
 
     private static boolean music_end = false;
 
+
+    private static ContentValues data;
+
     public Thread music_thread = new Thread(){
         public void run() {
 
@@ -77,9 +62,7 @@ public class Plugin extends Aware_Plugin {
                 music_end = false;
                 mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                        public void onCompletion(MediaPlayer mp) {
-                           Log.d(TAG, "77");
                            mp.release();
-                           //mp.reset();
                            music_end = true;
                        }
                    }
@@ -99,6 +82,7 @@ public class Plugin extends Aware_Plugin {
     public Thread solar_thread = new Thread(){
         public void run(){
             while(Aware.getSetting(getApplicationContext(), Settings.STATUS_PLUGIN_CHARGING_MONITOR).equals("true")){
+
                 charger_type = Integer.parseInt(Aware.getSetting(getApplicationContext(), Settings.MODE_PLUGIN_CHARGING_MONITOR));
                 Cursor PL = getApplicationContext().getContentResolver().query(Battery_Data.CONTENT_URI, null, null, null, Battery_Data.TIMESTAMP + " DESC LIMIT 1");
                 if (PL != null && PL.moveToFirst()) {
@@ -145,16 +129,17 @@ public class Plugin extends Aware_Plugin {
                         int gained_percentage = currentLevel - percentage_start;
                         long time_now = System.currentTimeMillis();
                         long time_spent = time_now - time_start;  //mseconds here
-                        double time_mintues = time_spent / 60000.0;  ////round to minutes
-                        speed = gained_percentage / time_mintues;
+                        double time_minutes = time_spent / 60000.0;  ////round to minutes
+                        speed = gained_percentage / time_minutes;
                         percentage_end = currentLevel;
-                        Log.d(TAG, "119");
-                        Log.d(TAG, "gained_percentage = " + gained_percentage);
-                        Log.d(TAG, "time_start = " + time_start);
-                        Log.d(TAG, "time_now = " + time_now);
-                        Log.d(TAG, "time_spent = " + time_spent);
-                        Log.d(TAG, "time_mintues = " + time_mintues);
-                        Log.d(TAG, "speed = " + speed);
+                        if( DEBUG ) {
+                            Log.d(TAG, "Gained_percentage = " + gained_percentage);
+                            Log.d(TAG, "time_start = " + time_start);
+                            Log.d(TAG, "time_now = " + time_now);
+                            Log.d(TAG, "time_spent = " + time_spent);
+                            Log.d(TAG, "time_minutes = " + time_minutes);
+                            Log.d(TAG, "speed = " + speed);
+                        }
                     }
                 }
                 if (BL != null && !BL.isClosed()) {
@@ -196,24 +181,25 @@ public class Plugin extends Aware_Plugin {
 
                 time_end = System.currentTimeMillis();
 
-                ContentValues data = new ContentValues();
+                data = new ContentValues();
                 data.put(Provider.Charging_Monitor_Data.TIMESTAMP, System.currentTimeMillis());
                 data.put(Provider.Charging_Monitor_Data.DEVICE_ID, Aware.getSetting(getApplicationContext(), Aware_Preferences.DEVICE_ID));
                 data.put(Provider.Charging_Monitor_Data.CHARGER_TYPE, charger_type);
                 data.put(Provider.Charging_Monitor_Data.PERCENTAGE_START, percentage_start);
                 data.put(Provider.Charging_Monitor_Data.PERCENTAGE_END, percentage_end);
                 data.put(Provider.Charging_Monitor_Data.TIME_START, time_start);
-                data.put(Provider.Charging_Monitor_Data.TIME_END, time_end);
                 data.put(Provider.Charging_Monitor_Data.SPEED, speed);
-                data.put(Provider.Charging_Monitor_Data.TIME_DISCHARGE, time_discharge);
-                data.put(Provider.Charging_Monitor_Data.SPEED_DISCHARGE, speed_discharge);
                 data.put(Charging_Monitor_Data.PERCENTAGE_START_DISCHARGE, percentage_start_discharge);
                 data.put(Charging_Monitor_Data.PERCENTAGE_END_DISCHARGE, percentage_end_discharge);
+                data.put(Provider.Charging_Monitor_Data.TIME_DISCHARGE, time_discharge);
+                data.put(Provider.Charging_Monitor_Data.SPEED_DISCHARGE, speed_discharge);
+                data.put(Provider.Charging_Monitor_Data.TIME_END, time_end);
 
                 getContentResolver().insert(Provider.Charging_Monitor_Data.CONTENT_URI, data);
 
                 //Share context
                 context_producer.onContext();
+
                 try {
                     Thread.sleep(6000);
                     //detect once every 6 secs
@@ -237,17 +223,12 @@ public class Plugin extends Aware_Plugin {
             public void onContext() {
                 Intent context_solar_charger = new Intent();
                 context_solar_charger.setAction(ACTION_AWARE_PLUGIN_CHARGING_MONITOR);
-                context_solar_charger.putExtra(EXTRA_CHARGER_TYPE, charger_type);
-                context_solar_charger.putExtra(EXTRA_PERCENTAGE_START, percentage_start);
-                context_solar_charger.putExtra(EXTRA_PERCENTAGE_END, percentage_end);
-                context_solar_charger.putExtra(EXTRA_TIME_START, time_start);
-                context_solar_charger.putExtra(EXTRA_TIME_END, time_end);
-                context_solar_charger.putExtra(EXTRA_SPEED, speed);
-                context_solar_charger.putExtra(EXTRA_TIME_DISCHARGE, time_discharge);
-                context_solar_charger.putExtra(EXTRA_SPEED_DISCHARGE, speed_discharge);
-                context_solar_charger.putExtra(EXTRA_PERCENTAGE_START_DISCHARGE, percentage_start_discharge);
-                context_solar_charger.putExtra(EXTRA_PERCENTAGE_END_DISCHARGE, percentage_end_discharge);
+                context_solar_charger.putExtra(EXTRA_DATA, data);
                 sendBroadcast(context_solar_charger);
+
+                if( DEBUG ) {
+                    Log.d(TAG,"Inserted: " + data.toString());
+                }
             }
         };
         context_producer = CONTEXT_PRODUCER;

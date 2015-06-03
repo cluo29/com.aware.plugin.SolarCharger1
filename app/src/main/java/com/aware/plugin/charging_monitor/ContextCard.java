@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Color;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.LayoutInflater;
@@ -11,8 +12,10 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.database.Cursor;
+
 import com.aware.plugin.charging_monitor.Provider.Charging_Monitor_Data;
 
+import com.aware.providers.Battery_Provider;
 import com.aware.ui.Stream_UI;
 import com.aware.utils.IContextCard;
 
@@ -26,6 +29,13 @@ public class ContextCard implements IContextCard {
         @Override
         public void run() {
 
+            boolean is_charging = false;
+            Cursor currentCharging = sContext.getContentResolver().query(Battery_Provider.Battery_Data.CONTENT_URI, new String[]{Battery_Provider.Battery_Data.STATUS}, null, null, Battery_Provider.Battery_Data.TIMESTAMP + " DESC LIMIT 1");
+            if( currentCharging != null && currentCharging.moveToFirst() ) {
+                is_charging = (currentCharging.getInt(currentCharging.getColumnIndex(Battery_Provider.Battery_Data.STATUS))!=3);
+            }
+            if( currentCharging != null && ! currentCharging.isClosed() ) currentCharging.close();
+
             Cursor latest = sContext.getContentResolver().query(Provider.Charging_Monitor_Data.CONTENT_URI, null, null, null, Charging_Monitor_Data.TIMESTAMP + " DESC LIMIT 1");
             if (latest != null && latest.moveToFirst()) {
                 if( card != null ) {
@@ -34,27 +44,36 @@ public class ContextCard implements IContextCard {
                     counter_txt3.setVisibility(View.VISIBLE);
                     counter_txt4.setVisibility(View.VISIBLE);
                     counter_txt5.setVisibility(View.VISIBLE);
-                    counter_txt6.setVisibility(View.VISIBLE);
-                    counter_txt7.setVisibility(View.VISIBLE);
-                    counter_txt8.setVisibility(View.VISIBLE);
-                    counter_txt2.setText("Charging Monitor");
-                    counter_txt3.setText("Charging % start: "+latest.getInt(latest.getColumnIndex(Provider.Charging_Monitor_Data.PERCENTAGE_START)));
-                    counter_txt4.setText("Charging % end: "+latest.getInt(latest.getColumnIndex(Provider.Charging_Monitor_Data.PERCENTAGE_END)));
-                    counter_txt5.setText("Charging rate in %/minute: " + String.format("%.3f", latest.getDouble(latest.getColumnIndex(Provider.Charging_Monitor_Data.SPEED))));
-                    counter_txt6.setText("Discharging % start: "+latest.getInt(latest.getColumnIndex(Provider.Charging_Monitor_Data.PERCENTAGE_START_DISCHARGE)));
-                    counter_txt7.setText("Discharging % end: "+latest.getInt(latest.getColumnIndex(Charging_Monitor_Data.PERCENTAGE_END_DISCHARGE)));
-                    counter_txt8.setText("Discharging rate in %/minute: " + String.format("%.3f", latest.getDouble(latest.getColumnIndex(Provider.Charging_Monitor_Data.SPEED_DISCHARGE))));
+                    if( is_charging ) {
+                        counter_txt2.setTextColor(Color.parseColor("#ff00a33c"));
+                        counter_txt3.setTextColor(Color.parseColor("#ff00a33c"));
+                        counter_txt4.setTextColor(Color.parseColor("#ff00a33c"));
+                        counter_txt5.setTextColor(Color.parseColor("#ff00a33c"));
+
+                        counter_txt2.setText("Charging");
+                        counter_txt3.setText(latest.getInt(latest.getColumnIndex(Provider.Charging_Monitor_Data.PERCENTAGE_START)) + "->");
+                        counter_txt4.setText(""+latest.getInt(latest.getColumnIndex(Provider.Charging_Monitor_Data.PERCENTAGE_END)));
+                        counter_txt5.setText(String.format("%.3f", latest.getDouble(latest.getColumnIndex(Provider.Charging_Monitor_Data.SPEED))) + " %/min");
+                    } else {
+                        counter_txt2.setTextColor(Color.RED);
+                        counter_txt3.setTextColor(Color.RED);
+                        counter_txt4.setTextColor(Color.RED);
+                        counter_txt5.setTextColor(Color.RED);
+                        counter_txt2.setText("Discharging");
+                        counter_txt3.setText(latest.getInt(latest.getColumnIndex(Provider.Charging_Monitor_Data.PERCENTAGE_START_DISCHARGE))+ "->");
+                        counter_txt4.setText(""+latest.getInt(latest.getColumnIndex(Charging_Monitor_Data.PERCENTAGE_END_DISCHARGE)));
+                        counter_txt5.setText(String.format("%.3f", latest.getDouble(latest.getColumnIndex(Provider.Charging_Monitor_Data.SPEED_DISCHARGE))) + " %/min");
+                    }
                 }
             } else {
                 counter_txt.setVisibility(View.VISIBLE);
                 counter_txt.setText("Please connect to charger to begin.");
+
                 counter_txt2.setVisibility(View.GONE);
                 counter_txt3.setVisibility(View.GONE);
                 counter_txt4.setVisibility(View.GONE);
                 counter_txt5.setVisibility(View.GONE);
-                counter_txt6.setVisibility(View.GONE);
-                counter_txt7.setVisibility(View.GONE);
-                counter_txt8.setVisibility(View.GONE);
+
             }
             if (latest != null && !latest.isClosed()) latest.close();
 
@@ -71,13 +90,10 @@ public class ContextCard implements IContextCard {
     //Declare here all the UI elements you'll be accessing
     private View card;
     private TextView counter_txt;
-    private TextView counter_txt2;
-    private TextView counter_txt3;
-    private TextView counter_txt4;
-    private TextView counter_txt5;
-    private TextView counter_txt6;
-    private TextView counter_txt7;
-    private TextView counter_txt8;
+    private TextView counter_txt2; // charging label
+    private TextView counter_txt3; //start
+    private TextView counter_txt4; //end
+    private TextView counter_txt5; //rate
 
     @Override
     public View getContextCard(Context context) {
@@ -94,15 +110,11 @@ public class ContextCard implements IContextCard {
         card = sInflater.inflate(R.layout.card, new RelativeLayout(context));
 
         //Initialize UI elements from the card
-        counter_txt = (TextView) card.findViewById(R.id.textView);
-        counter_txt2 = (TextView) card.findViewById(R.id.textView2);
-        counter_txt3 = (TextView) card.findViewById(R.id.textView3);
-        counter_txt4 = (TextView) card.findViewById(R.id.textView4);
-        counter_txt5 = (TextView) card.findViewById(R.id.textView5);
-        counter_txt6 = (TextView) card.findViewById(R.id.textView6);
-        counter_txt7 = (TextView) card.findViewById(R.id.textView7);
-        counter_txt8 = (TextView) card.findViewById(R.id.textView8);
-
+        counter_txt = (TextView) card.findViewById(R.id.data_available);
+        counter_txt2 = (TextView) card.findViewById(R.id.charging_state);
+        counter_txt3 = (TextView) card.findViewById(R.id.start);
+        counter_txt4 = (TextView) card.findViewById(R.id.end);
+        counter_txt5 = (TextView) card.findViewById(R.id.rate);
         //Begin refresh cycle
         uiRefresher.post(uiChanger);
 
