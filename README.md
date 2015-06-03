@@ -1,2 +1,2 @@
-# com.aware.plugin.SolarCharger1
+# charging_monitor
 123

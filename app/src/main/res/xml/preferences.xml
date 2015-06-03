@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.aware.ui.Aware_Toolbar android:title="@string/app_name" />
+
     <CheckBoxPreference
-        android:key="status_plugin_SolarCharger1"
+        android:key="status_plugin_charging_monitor"
         android:defaultValue="false"
         android:persistent="true"
-        android:summary="Activate/Deactivate SolarCharger plugin"
+        android:summary="Activate/Deactivate plugin"
         android:title="Active" />
 
     <EditTextPreference
         android:defaultValue="1"
-        android:key="mode_plugin_SolarCharger1"
+        android:key="mode_plugin_charging_monitor"
         android:persistent="true"
-        android:summary="Charger Mode"
-        android:title="Mode 1 = Solar, 2 = PC USB, 3 = AC"
+        android:summary="Charger Mode: Solar"
+        android:title="Charging Mode"
         android:inputType="numberDecimal" />
 </PreferenceScreen>
