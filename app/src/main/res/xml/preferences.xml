@@ -42,4 +42,12 @@
         android:summary="Charger Mode: Solar"
         android:title="Charging Mode"
         android:inputType="text" />
+    <EditTextPreference
+        android:defaultValue="1"
+        android:key="solar_current"
+        android:persistent="true"
+        android:summary="Current:"
+        android:title="Theoretical current"
+        android:inputType="text" />
+
 </PreferenceScreen>

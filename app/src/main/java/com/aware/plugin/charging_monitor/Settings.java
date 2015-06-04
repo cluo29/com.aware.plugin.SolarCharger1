@@ -19,6 +19,7 @@ public class Settings extends PreferenceActivity implements SharedPreferences.On
     public static final String TYPE_OF_LIGHT= "type_of_light";
     public static final String TYPE_OF_SOLAR_CELL= "type_of_solar_cell";
     public static final String MODE_PLUGIN_CHARGING_MONITOR = "mode_plugin_charging_monitor";
+    public static final String SOLAR_CURRENT = "solar_current";
 
     private static CheckBoxPreference status;
     private static EditTextPreference size;
@@ -26,6 +27,7 @@ public class Settings extends PreferenceActivity implements SharedPreferences.On
     private static EditTextPreference light;
     private static EditTextPreference cell;
     private static EditTextPreference mode;
+    private static EditTextPreference current;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +75,12 @@ public class Settings extends PreferenceActivity implements SharedPreferences.On
             Aware.setSetting(getApplicationContext(), MODE_PLUGIN_CHARGING_MONITOR, "1");
         }
         mode.setSummary("Mode: " + Aware.getSetting(getApplicationContext(), MODE_PLUGIN_CHARGING_MONITOR));
+
+        current = (EditTextPreference) findPreference(SOLAR_CURRENT);
+        if( Aware.getSetting(getApplicationContext(), SOLAR_CURRENT).length() == 0 ) {
+            Aware.setSetting(getApplicationContext(), SOLAR_CURRENT, "1");
+        }
+        current.setSummary("Current: " + Aware.getSetting(getApplicationContext(), SOLAR_CURRENT));
     }
 
     @Override
@@ -80,8 +88,7 @@ public class Settings extends PreferenceActivity implements SharedPreferences.On
         Preference preference = findPreference(key);
         if( preference.getKey().equals(MODE_PLUGIN_CHARGING_MONITOR)) {
             Aware.setSetting(getApplicationContext(), key, sharedPreferences.getString(key, "1"));
-            String mode_setting = Aware.getSetting(getApplicationContext(), MODE_PLUGIN_CHARGING_MONITOR);
-            mode.setSummary("Mode: " + mode_setting);
+            mode.setSummary("Mode: " + sharedPreferences.getString(key,"1"));
         }
         if( preference.getKey().equals(SIZE_OF_PANEL)) {
             Aware.setSetting(getApplicationContext(), key, sharedPreferences.getString(key, "1"));
@@ -97,6 +104,10 @@ public class Settings extends PreferenceActivity implements SharedPreferences.On
         }
         if( preference.getKey().equals(TYPE_OF_SOLAR_CELL)) {
             cell.setSummary("Type of cell: " + sharedPreferences.getString(key, "1"));
+            Aware.setSetting(getApplicationContext(), key, sharedPreferences.getString(key, "1"));
+        }
+        if( preference.getKey().equals(SOLAR_CURRENT)) {
+            current.setSummary("Current: " + sharedPreferences.getString(key, "1"));
             Aware.setSetting(getApplicationContext(), key, sharedPreferences.getString(key, "1"));
         }
         if( preference.getKey().equals(STATUS_PLUGIN_CHARGING_MONITOR) ) {

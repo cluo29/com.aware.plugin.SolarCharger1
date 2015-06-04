@@ -30,6 +30,8 @@ public class Plugin extends Aware_Plugin {
 
     private static String type_of_solar_cell = "";
 
+    private static String solar_current = "";
+
     private static int percentage_start = -1; // shall be 0 - 100
 
     private static int percentage_end = -1;
@@ -65,6 +67,8 @@ public class Plugin extends Aware_Plugin {
                 type_of_light = Aware.getSetting(getApplicationContext(), Settings.TYPE_OF_LIGHT);
 
                 type_of_solar_cell = Aware.getSetting(getApplicationContext(), Settings.TYPE_OF_SOLAR_CELL);
+
+                solar_current = Aware.getSetting(getApplicationContext(), Settings.SOLAR_CURRENT);
 
                 Cursor PL = getApplicationContext().getContentResolver().query(Battery_Data.CONTENT_URI, null, null, null, Battery_Data.TIMESTAMP + " DESC LIMIT 1");
                 if (PL != null && PL.moveToFirst()) {
@@ -163,6 +167,7 @@ public class Plugin extends Aware_Plugin {
                 data.put(Provider.Charging_Monitor_Data.BOX_LUX, lux_inside_box);
                 data.put(Provider.Charging_Monitor_Data.LIGHT_TYPE, type_of_light);
                 data.put(Provider.Charging_Monitor_Data.CELL_TYPE, type_of_solar_cell);
+                data.put(Provider.Charging_Monitor_Data.SOLAR_CURRENT, solar_current);
                 data.put(Provider.Charging_Monitor_Data.PERCENTAGE_START, percentage_start);
                 data.put(Provider.Charging_Monitor_Data.PERCENTAGE_END, percentage_end);
                 data.put(Provider.Charging_Monitor_Data.TIME_START, time_start);
@@ -234,6 +239,10 @@ public class Plugin extends Aware_Plugin {
         if( Aware.getSetting(getApplicationContext(), Settings.MODE_PLUGIN_CHARGING_MONITOR).length() == 0 ) {
             Aware.setSetting(getApplicationContext(), Settings.MODE_PLUGIN_CHARGING_MONITOR, "1");
         }
+        if( Aware.getSetting(getApplicationContext(), Settings.SOLAR_CURRENT).length() == 0 ) {
+            Aware.setSetting(getApplicationContext(), Settings.SOLAR_CURRENT, "1");
+        }
+
         Aware.setSetting(this, Aware_Preferences.STATUS_BATTERY, true);
         Aware.startPlugin(this, getPackageName());
 

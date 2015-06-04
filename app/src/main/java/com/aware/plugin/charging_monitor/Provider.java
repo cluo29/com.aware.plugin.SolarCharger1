@@ -21,7 +21,7 @@ import com.aware.Aware;
 import com.aware.utils.DatabaseHelper;
 
 public class Provider extends ContentProvider {
-    public static final int DATABASE_VERSION = 7;
+    public static final int DATABASE_VERSION = 8;
     /**
      * Provider authority: com.aware.plugin.charging_monitor.provider.charging_monitor
      */
@@ -48,6 +48,7 @@ public class Provider extends ContentProvider {
         public static final String BOX_LUX = "box_lux";
         public static final String LIGHT_TYPE = "light_type";
         public static final String CELL_TYPE = "cell_type";
+        public static final String SOLAR_CURRENT = "solar_current"; //theoretical solar panel current input
         public static final String PERCENTAGE_START = "percentage_start";    // power percentages
         public static final String PERCENTAGE_END = "percentage_end";    //
         public static final String TIME_START = "double_time_start";    //timestamp
@@ -67,6 +68,7 @@ public class Provider extends ContentProvider {
             Charging_Monitor_Data.BOX_LUX + " text default ''," +
             Charging_Monitor_Data.LIGHT_TYPE + " text default ''," +
             Charging_Monitor_Data.CELL_TYPE + " text default ''," +
+            Charging_Monitor_Data.SOLAR_CURRENT + " text default ''," +
             Charging_Monitor_Data.PERCENTAGE_START + " integer default 0," +
             Charging_Monitor_Data.PERCENTAGE_END + " integer default 0," +
             Charging_Monitor_Data.TIME_START + " real default 0," +
@@ -98,6 +100,7 @@ public class Provider extends ContentProvider {
         databaseMap.put(Charging_Monitor_Data.BOX_LUX, Charging_Monitor_Data.BOX_LUX);
         databaseMap.put(Charging_Monitor_Data.LIGHT_TYPE, Charging_Monitor_Data.LIGHT_TYPE);
         databaseMap.put(Charging_Monitor_Data.CELL_TYPE, Charging_Monitor_Data.CELL_TYPE);
+        databaseMap.put(Charging_Monitor_Data.SOLAR_CURRENT, Charging_Monitor_Data.SOLAR_CURRENT);
         databaseMap.put(Charging_Monitor_Data.PERCENTAGE_START, Charging_Monitor_Data.PERCENTAGE_START);
         databaseMap.put(Charging_Monitor_Data.PERCENTAGE_END, Charging_Monitor_Data.PERCENTAGE_END);
         databaseMap.put(Charging_Monitor_Data.TIME_START, Charging_Monitor_Data.TIME_START);
