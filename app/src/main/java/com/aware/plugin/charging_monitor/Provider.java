@@ -117,7 +117,6 @@ public class Provider extends ContentProvider {
         }
         if( databaseHelper != null && ( database == null || ! database.isOpen() )) {
             database = databaseHelper.getWritableDatabase();
-
         }
         return( database != null && databaseHelper != null);
     }

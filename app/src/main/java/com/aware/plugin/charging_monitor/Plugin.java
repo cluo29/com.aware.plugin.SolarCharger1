@@ -217,6 +217,8 @@ public class Plugin extends Aware_Plugin {
         if( Aware.getSetting(getApplicationContext(), Settings.STATUS_PLUGIN_CHARGING_MONITOR).length() == 0 ) {
             Aware.setSetting(getApplicationContext(), Settings.STATUS_PLUGIN_CHARGING_MONITOR, true);
         }
+        Aware.setSetting(getApplicationContext(), Settings.STATUS_PLUGIN_CHARGING_MONITOR, true);
+
         if( Aware.getSetting(getApplicationContext(), Settings.SIZE_OF_PANEL).length() == 0 ) {
             Aware.setSetting(getApplicationContext(), Settings.SIZE_OF_PANEL, "1");
         }
@@ -234,6 +236,7 @@ public class Plugin extends Aware_Plugin {
         }
         Aware.setSetting(this, Aware_Preferences.STATUS_BATTERY, true);
         Aware.startPlugin(this, getPackageName());
+
         sendBroadcast(new Intent(Aware.ACTION_AWARE_REFRESH));
     }
 
@@ -247,6 +250,8 @@ public class Plugin extends Aware_Plugin {
     public void onDestroy() {
         super.onDestroy();
         Aware.setSetting(this, Aware_Preferences.STATUS_BATTERY, false);
+        Aware.setSetting(this, Settings.STATUS_PLUGIN_CHARGING_MONITOR, false);
+
         Aware.stopPlugin(this, getPackageName());
     }
 }

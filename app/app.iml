@@ -104,9 +104,9 @@
     <orderEntry type="library" exported="" name="support-annotations-22.2.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-wallet-7.5.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-identity-7.5.0" level="project" />
-    <orderEntry type="library" exported="" name="aware-core-3.4.0" level="project" />
     <orderEntry type="library" exported="" name="cardview-v7-22.0.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-appstate-7.5.0" level="project" />
+    <orderEntry type="library" exported="" name="aware-core-3.4.2" level="project" />
     <orderEntry type="library" exported="" name="play-services-nearby-7.5.0" level="project" />
     <orderEntry type="library" exported="" name="support-v4-22.2.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-cast-7.5.0" level="project" />
