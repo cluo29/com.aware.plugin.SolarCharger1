@@ -70,13 +70,25 @@ public class Plugin extends Aware_Plugin {
 
                 solar_current = Aware.getSetting(getApplicationContext(), Settings.SOLAR_CURRENT);
 
+
                 Cursor PL = getApplicationContext().getContentResolver().query(Battery_Data.CONTENT_URI, null, null, null, Battery_Data.TIMESTAMP + " DESC LIMIT 1");
                 if (PL != null && PL.moveToFirst()) {
                     int currentLevel = PL.getInt(PL.getColumnIndex(Battery_Data.LEVEL));
                     if(currentLevel==100)
                     //charging ends with 100
                     {
-                        continue;
+                        Cursor latest = getApplicationContext().getContentResolver().query(Provider.Charging_Monitor_Data.CONTENT_URI, null, null, null, Charging_Monitor_Data.TIMESTAMP + " DESC LIMIT 1");
+                        if (latest != null && latest.moveToFirst()) {
+                            if (latest.getInt(latest.getColumnIndex(Charging_Monitor_Data.PERCENTAGE_END)) == 100)
+                            {
+                                continue;
+                            }
+
+                        }
+                        if (latest != null && !latest.isClosed())
+                        {
+                            latest.close();
+                        }
                     }
                 }
                 if (PL != null && !PL.isClosed()) {
