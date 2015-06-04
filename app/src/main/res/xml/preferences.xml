@@ -9,12 +9,39 @@
         android:persistent="true"
         android:summary="Activate/Deactivate plugin"
         android:title="Active" />
-
+    <EditTextPreference
+        android:defaultValue="1"
+        android:key="size_of_panel"
+        android:persistent="true"
+        android:summary="Panel Size"
+        android:title="Panel Size"
+        android:inputType="text" />
+    <EditTextPreference
+        android:defaultValue="1"
+        android:key="lux_inside_box"
+        android:persistent="true"
+        android:summary="Box Lux"
+        android:title="Box Lux"
+        android:inputType="text" />
+    <EditTextPreference
+        android:defaultValue="1"
+        android:key="type_of_light"
+        android:persistent="true"
+        android:summary="Light Type"
+        android:title="Light Type"
+        android:inputType="text" />
+    <EditTextPreference
+        android:defaultValue="1"
+        android:key="type_of_solar_cell"
+        android:persistent="true"
+        android:summary="Cell Type: Solar"
+        android:title="Cell Type"
+        android:inputType="text" />
     <EditTextPreference
         android:defaultValue="1"
         android:key="mode_plugin_charging_monitor"
         android:persistent="true"
         android:summary="Charger Mode: Solar"
         android:title="Charging Mode"
-        android:inputType="numberDecimal" />
+        android:inputType="text" />
 </PreferenceScreen>

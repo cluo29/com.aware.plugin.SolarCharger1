@@ -2,11 +2,10 @@ package com.aware.plugin.charging_monitor;
 
 import android.content.Intent;
 import android.util.Log;
-import android.media.MediaPlayer;
 import android.content.ContentValues;
 
 import android.database.Cursor;
-
+import android.net.Uri;
 import com.aware.Aware;
 import com.aware.Aware_Preferences;
 import com.aware.utils.Aware_Plugin;
@@ -43,41 +42,7 @@ public class Plugin extends Aware_Plugin {
 
     public static ContextProducer context_producer;
 
-    private static MediaPlayer mp;
-
-    private static boolean music_started = false;
-
-    private static boolean music_end = false;
-
-
     private static ContentValues data;
-
-    public Thread music_thread = new Thread(){
-        public void run() {
-
-            mp = MediaPlayer.create(getApplicationContext(), R.raw.music);
-            try {
-                mp.setLooping(false);
-                mp.start();
-                music_end = false;
-                mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                       public void onCompletion(MediaPlayer mp) {
-                           mp.release();
-                           music_end = true;
-                       }
-                   }
-                );
-                mp.setOnErrorListener(new MediaPlayer.OnErrorListener() {
-                    @Override
-                    public boolean onError(MediaPlayer mp, int what, int extra) {
-                        return false;
-                    }
-                });
-            } catch (IllegalArgumentException e) {
-            } catch (IllegalStateException e) {
-            }
-        }
-    };
 
     public Thread solar_thread = new Thread(){
         public void run(){
@@ -90,15 +55,7 @@ public class Plugin extends Aware_Plugin {
                     if(currentLevel==100)
                     //charging ends with 100
                     {
-                        //play music!
-                        if(!music_started) {
-                            music_thread.start();
-                            music_started = true;
-                        }
-                        else if(music_end)
-                        {
-                            music_thread.run();
-                        }
+                        continue;
                     }
                 }
                 if (PL != null && !PL.isClosed()) {
@@ -214,10 +171,8 @@ public class Plugin extends Aware_Plugin {
     @Override
     public void onCreate() {
         super.onCreate();
-
         TAG = "AWARE::" + getResources().getString(R.string.app_name);
         DEBUG = Aware.getSetting(this, Aware_Preferences.DEBUG_FLAG).equals("true");
-
         CONTEXT_PRODUCER = new ContextProducer() {
             @Override
             public void onContext() {
@@ -225,25 +180,27 @@ public class Plugin extends Aware_Plugin {
                 context_solar_charger.setAction(ACTION_AWARE_PLUGIN_CHARGING_MONITOR);
                 context_solar_charger.putExtra(EXTRA_DATA, data);
                 sendBroadcast(context_solar_charger);
-
                 if( DEBUG ) {
                     Log.d(TAG,"Inserted: " + data.toString());
                 }
             }
         };
         context_producer = CONTEXT_PRODUCER;
-        solar_thread.start();
 
+
+        DATABASE_TABLES = Provider.DATABASE_TABLES;
+        TABLES_FIELDS = Provider.TABLES_FIELDS;
+        CONTEXT_URIS = new Uri[]{ Charging_Monitor_Data.CONTENT_URI };
+
+        solar_thread.start();
         if( Aware.getSetting(getApplicationContext(), Settings.STATUS_PLUGIN_CHARGING_MONITOR).length() == 0 ) {
             Aware.setSetting(getApplicationContext(), Settings.STATUS_PLUGIN_CHARGING_MONITOR, true);
         }
         if( Aware.getSetting(getApplicationContext(), Settings.MODE_PLUGIN_CHARGING_MONITOR).length() == 0 ) {
             Aware.setSetting(getApplicationContext(), Settings.MODE_PLUGIN_CHARGING_MONITOR, 1);
         }
-
         Aware.setSetting(this, Aware_Preferences.STATUS_BATTERY, true);
         Aware.startPlugin(this, getPackageName());
-
         sendBroadcast(new Intent(Aware.ACTION_AWARE_REFRESH));
     }
 
@@ -256,7 +213,6 @@ public class Plugin extends Aware_Plugin {
     @Override
     public void onDestroy() {
         super.onDestroy();
-
         Aware.setSetting(this, Aware_Preferences.STATUS_BATTERY, false);
         Aware.stopPlugin(this, getPackageName());
     }
