@@ -20,7 +20,15 @@ public class Plugin extends Aware_Plugin {
 
     public static final String EXTRA_DATA = "data";
 
-    private static int charger_type = 0; //1=solar, 2= pc ,3=ac
+    private static String charger_type = ""; //1=solar, 2= pc ,3=ac
+
+    private static String size_of_panel = "";
+
+    private static String lux_inside_box = "";
+
+    private static String type_of_light = "";
+
+    private static String type_of_solar_cell = "";
 
     private static int percentage_start = -1; // shall be 0 - 100
 
@@ -48,7 +56,16 @@ public class Plugin extends Aware_Plugin {
         public void run(){
             while(Aware.getSetting(getApplicationContext(), Settings.STATUS_PLUGIN_CHARGING_MONITOR).equals("true")){
 
-                charger_type = Integer.parseInt(Aware.getSetting(getApplicationContext(), Settings.MODE_PLUGIN_CHARGING_MONITOR));
+                charger_type = Aware.getSetting(getApplicationContext(), Settings.MODE_PLUGIN_CHARGING_MONITOR);
+
+                size_of_panel = Aware.getSetting(getApplicationContext(), Settings.SIZE_OF_PANEL);
+
+                lux_inside_box = Aware.getSetting(getApplicationContext(), Settings.LUX_INSIDE_BOX);
+
+                type_of_light = Aware.getSetting(getApplicationContext(), Settings.TYPE_OF_LIGHT);
+
+                type_of_solar_cell = Aware.getSetting(getApplicationContext(), Settings.TYPE_OF_SOLAR_CELL);
+
                 Cursor PL = getApplicationContext().getContentResolver().query(Battery_Data.CONTENT_URI, null, null, null, Battery_Data.TIMESTAMP + " DESC LIMIT 1");
                 if (PL != null && PL.moveToFirst()) {
                     int currentLevel = PL.getInt(PL.getColumnIndex(Battery_Data.LEVEL));
@@ -127,8 +144,8 @@ public class Plugin extends Aware_Plugin {
                         int lost_percentage = percentage_start_discharge - currentLevel;
                         long time_now = System.currentTimeMillis();
                         long time_spent = time_now - time_discharge;  //mseconds here
-                        double time_mintues = time_spent / 60000.0;  ////round to minutes
-                        speed_discharge = lost_percentage / time_mintues;
+                        double time_minutes = time_spent / 60000.0;  ////round to minutes
+                        speed_discharge = lost_percentage / time_minutes;
                         percentage_end_discharge = currentLevel;
                     }
                 }
@@ -142,12 +159,16 @@ public class Plugin extends Aware_Plugin {
                 data.put(Provider.Charging_Monitor_Data.TIMESTAMP, System.currentTimeMillis());
                 data.put(Provider.Charging_Monitor_Data.DEVICE_ID, Aware.getSetting(getApplicationContext(), Aware_Preferences.DEVICE_ID));
                 data.put(Provider.Charging_Monitor_Data.CHARGER_TYPE, charger_type);
+                data.put(Provider.Charging_Monitor_Data.PANEL_SIZE, size_of_panel);
+                data.put(Provider.Charging_Monitor_Data.BOX_LUX, lux_inside_box);
+                data.put(Provider.Charging_Monitor_Data.LIGHT_TYPE, type_of_light);
+                data.put(Provider.Charging_Monitor_Data.CELL_TYPE, type_of_solar_cell);
                 data.put(Provider.Charging_Monitor_Data.PERCENTAGE_START, percentage_start);
                 data.put(Provider.Charging_Monitor_Data.PERCENTAGE_END, percentage_end);
                 data.put(Provider.Charging_Monitor_Data.TIME_START, time_start);
                 data.put(Provider.Charging_Monitor_Data.SPEED, speed);
-                data.put(Charging_Monitor_Data.PERCENTAGE_START_DISCHARGE, percentage_start_discharge);
-                data.put(Charging_Monitor_Data.PERCENTAGE_END_DISCHARGE, percentage_end_discharge);
+                data.put(Provider.Charging_Monitor_Data.PERCENTAGE_START_DISCHARGE, percentage_start_discharge);
+                data.put(Provider.Charging_Monitor_Data.PERCENTAGE_END_DISCHARGE, percentage_end_discharge);
                 data.put(Provider.Charging_Monitor_Data.TIME_DISCHARGE, time_discharge);
                 data.put(Provider.Charging_Monitor_Data.SPEED_DISCHARGE, speed_discharge);
                 data.put(Provider.Charging_Monitor_Data.TIME_END, time_end);
@@ -196,8 +217,20 @@ public class Plugin extends Aware_Plugin {
         if( Aware.getSetting(getApplicationContext(), Settings.STATUS_PLUGIN_CHARGING_MONITOR).length() == 0 ) {
             Aware.setSetting(getApplicationContext(), Settings.STATUS_PLUGIN_CHARGING_MONITOR, true);
         }
+        if( Aware.getSetting(getApplicationContext(), Settings.SIZE_OF_PANEL).length() == 0 ) {
+            Aware.setSetting(getApplicationContext(), Settings.SIZE_OF_PANEL, "1");
+        }
+        if( Aware.getSetting(getApplicationContext(), Settings.LUX_INSIDE_BOX).length() == 0 ) {
+            Aware.setSetting(getApplicationContext(), Settings.LUX_INSIDE_BOX, "1");
+        }
+        if( Aware.getSetting(getApplicationContext(), Settings.TYPE_OF_LIGHT).length() == 0 ) {
+            Aware.setSetting(getApplicationContext(), Settings.TYPE_OF_LIGHT, "1");
+        }
+        if( Aware.getSetting(getApplicationContext(), Settings.TYPE_OF_SOLAR_CELL).length() == 0 ) {
+            Aware.setSetting(getApplicationContext(), Settings.TYPE_OF_SOLAR_CELL, "1");
+        }
         if( Aware.getSetting(getApplicationContext(), Settings.MODE_PLUGIN_CHARGING_MONITOR).length() == 0 ) {
-            Aware.setSetting(getApplicationContext(), Settings.MODE_PLUGIN_CHARGING_MONITOR, 1);
+            Aware.setSetting(getApplicationContext(), Settings.MODE_PLUGIN_CHARGING_MONITOR, "1");
         }
         Aware.setSetting(this, Aware_Preferences.STATUS_BATTERY, true);
         Aware.startPlugin(this, getPackageName());

@@ -68,7 +68,6 @@ public class ContextCard implements IContextCard {
             } else {
                 counter_txt.setVisibility(View.VISIBLE);
                 counter_txt.setText("Please connect to charger to begin.");
-
                 counter_txt2.setVisibility(View.GONE);
                 counter_txt3.setVisibility(View.GONE);
                 counter_txt4.setVisibility(View.GONE);

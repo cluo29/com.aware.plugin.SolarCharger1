@@ -21,7 +21,7 @@ import com.aware.Aware;
 import com.aware.utils.DatabaseHelper;
 
 public class Provider extends ContentProvider {
-    public static final int DATABASE_VERSION = 6;
+    public static final int DATABASE_VERSION = 7;
     /**
      * Provider authority: com.aware.plugin.charging_monitor.provider.charging_monitor
      */
@@ -44,6 +44,10 @@ public class Provider extends ContentProvider {
         public static final String TIMESTAMP = "timestamp";
         public static final String DEVICE_ID = "device_id";
         public static final String CHARGER_TYPE = "charger_type";   //1=solar, 2= pc ,3=ac
+        public static final String PANEL_SIZE = "panel_size";
+        public static final String BOX_LUX = "box_lux";
+        public static final String LIGHT_TYPE = "light_type";
+        public static final String CELL_TYPE = "cell_type";
         public static final String PERCENTAGE_START = "percentage_start";    // power percentages
         public static final String PERCENTAGE_END = "percentage_end";    //
         public static final String TIME_START = "double_time_start";    //timestamp
@@ -58,7 +62,11 @@ public class Provider extends ContentProvider {
             Charging_Monitor_Data._ID + " integer primary key autoincrement," +
             Charging_Monitor_Data.TIMESTAMP + " real default 0," +
             Charging_Monitor_Data.DEVICE_ID + " text default ''," +
-            Charging_Monitor_Data.CHARGER_TYPE + " integer default 0," +
+            Charging_Monitor_Data.CHARGER_TYPE + " text default ''," +
+            Charging_Monitor_Data.PANEL_SIZE + " text default ''," +
+            Charging_Monitor_Data.BOX_LUX + " text default ''," +
+            Charging_Monitor_Data.LIGHT_TYPE + " text default ''," +
+            Charging_Monitor_Data.CELL_TYPE + " text default ''," +
             Charging_Monitor_Data.PERCENTAGE_START + " integer default 0," +
             Charging_Monitor_Data.PERCENTAGE_END + " integer default 0," +
             Charging_Monitor_Data.TIME_START + " real default 0," +
@@ -86,11 +94,14 @@ public class Provider extends ContentProvider {
         databaseMap.put(Charging_Monitor_Data.TIMESTAMP, Charging_Monitor_Data.TIMESTAMP);
         databaseMap.put(Charging_Monitor_Data.DEVICE_ID, Charging_Monitor_Data.DEVICE_ID);
         databaseMap.put(Charging_Monitor_Data.CHARGER_TYPE, Charging_Monitor_Data.CHARGER_TYPE);
+        databaseMap.put(Charging_Monitor_Data.PANEL_SIZE, Charging_Monitor_Data.PANEL_SIZE);
+        databaseMap.put(Charging_Monitor_Data.BOX_LUX, Charging_Monitor_Data.BOX_LUX);
+        databaseMap.put(Charging_Monitor_Data.LIGHT_TYPE, Charging_Monitor_Data.LIGHT_TYPE);
+        databaseMap.put(Charging_Monitor_Data.CELL_TYPE, Charging_Monitor_Data.CELL_TYPE);
         databaseMap.put(Charging_Monitor_Data.PERCENTAGE_START, Charging_Monitor_Data.PERCENTAGE_START);
         databaseMap.put(Charging_Monitor_Data.PERCENTAGE_END, Charging_Monitor_Data.PERCENTAGE_END);
         databaseMap.put(Charging_Monitor_Data.TIME_START, Charging_Monitor_Data.TIME_START);
         databaseMap.put(Charging_Monitor_Data.TIME_END, Charging_Monitor_Data.TIME_END);
-
         databaseMap.put(Charging_Monitor_Data.SPEED, Charging_Monitor_Data.SPEED);
         databaseMap.put(Charging_Monitor_Data.TIME_DISCHARGE, Charging_Monitor_Data.TIME_DISCHARGE);
         databaseMap.put(Charging_Monitor_Data.SPEED_DISCHARGE, Charging_Monitor_Data.SPEED_DISCHARGE);
