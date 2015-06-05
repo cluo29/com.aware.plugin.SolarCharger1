@@ -225,7 +225,6 @@ public class Plugin extends Aware_Plugin {
         };
         context_producer = CONTEXT_PRODUCER;
 
-
         DATABASE_TABLES = Provider.DATABASE_TABLES;
         TABLES_FIELDS = Provider.TABLES_FIELDS;
         CONTEXT_URIS = new Uri[]{ Charging_Monitor_Data.CONTENT_URI };

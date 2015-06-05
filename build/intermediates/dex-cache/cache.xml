@@ -2,25 +2,214 @@
 <items version="2" >
 
     <item
-        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.awareframework/aware-core/3.4.2/classes.jar"
+        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/libs/internal_impl-22.0.0.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="b62e4a955c852caa5cfda90e9f1670cce0a736ce">
-        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/classes-050acddb8076a8b65626b7a10f40a4a428016082.jar" />
+        sha1="ba3df4eb0a630d7de294f0e48d3f9267d279b784">
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/internal_impl-22.0.0-938a505134407fbf3026e81dba93dd5ee50a31e0.jar" />
     </item>
     <item
-        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.awareframework/aware-core/3.4.2/libs/org.eclipse.paho.client.mqttv3-1.0.2.jar"
+        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.5.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="272bc5d7063f24bc3a33ea1d318cde8f31f5ec4c">
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/classes-47f0b5830ec5e11dc8830328c38a084ef94a3602.jar" />
+    </item>
+    <item
+        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a1372c17fccacca753d3951d3ad820571cbce075">
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/classes-3047ff4f4d0cf4be8bc1f6ffc6c932564b29f9a0.jar" />
+    </item>
+    <item
+        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.5.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6836d188602ec5382d1967c58b00960eb8ff8773">
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/classes-e27cf1ab981e3a0e32fa129bbda674053456dbc7.jar" />
+    </item>
+    <item
+        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.5.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f44d03c138cb6488fdbaa65e3a7e5878861a56d8">
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/classes-362d6826b9c936d0cd1a2143e594ad4f59fb7d95.jar" />
+    </item>
+    <item
+        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/7.5.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="69dd177337ead693c408c8dddc9546bb6f1244fa">
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/classes-8bf1175c5cbb4d4ed7a1260ea4ecbb55e18f15ce.jar" />
+    </item>
+    <item
+        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.5.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1e98ef3f124bb7a11f8575f9ff5dfea330b61b6f">
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/classes-91f8b2281bc74432ad48e19fed235dec34905bb5.jar" />
+    </item>
+    <item
+        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.5.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8e3a972f28b8bae817e382257ba177a31bcadbbc">
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/classes-62a18ce3051d3f06d7c7e7538dbfe8d311dd7fd2.jar" />
+    </item>
+    <item
+        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.5.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6440e5e5cfe368f9bff3c537fb8988048069cb33">
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/classes-b4d0bf1da44acae3046b0faf337021a7960a9e56.jar" />
+    </item>
+    <item
+        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.5.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="29ebc7e04d877062317c8cc0e68b20f0c1fcda66">
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/classes-1c209e70d6bab875a6e6949115b73040f9f3a91e.jar" />
+    </item>
+    <item
+        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="11842de6a309c447b3a3d60d73ad637a87c58994">
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/classes-060f658785fc5776b148de9e021cd4f0061d8ccb.jar" />
+    </item>
+    <item
+        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/7.5.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="63ec6e9f4fe5482a7447d0f3091b8e543a02554c">
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/classes-2785ebed05dd42c08bb9edac76e7dc05105f00b1.jar" />
+    </item>
+    <item
+        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.5.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a172852a35ff919e85b9b7f14bbc15c5bee25520">
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/classes-e4f2b919989fca2bd412dba7df7f003da8460e66.jar" />
+    </item>
+    <item
+        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.5.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a78183f30e769a98ab4820794f597763088d3065">
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/classes-f49deaa956951daa2035066f3f4e2f876c2ebb76.jar" />
+    </item>
+    <item
+        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.5.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f02127a85abd52a2cd526d4c2409f21969f80ee8">
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/classes-31810904085f5e84b383e6341cfd8222f07d888f.jar" />
+    </item>
+    <item
+        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.awareframework/aware-core/3.4.3/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="babd10dfbae635efc18d9947d9a3f56e674f921e">
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/classes-2a19e66d4f620f2ddad2ea9edfd33aab032c08ac.jar" />
+    </item>
+    <item
+        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.5.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ba207be21987c11b37d9f8faa08ed6e722569f30">
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/classes-7bc768637d80351dccdd07b4899e1ddffa7949d1.jar" />
+    </item>
+    <item
+        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.awareframework/aware-core/3.4.3/libs/org.eclipse.paho.client.mqttv3-1.0.2.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="11752d3f24d1a9deda4533a7ca18d8496417ceeb">
-        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/org.eclipse.paho.client.mqttv3-1.0.2-782119d91d56bb8901117a9208350a4a35d1606e.jar" />
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/org.eclipse.paho.client.mqttv3-1.0.2-4415dea50689006a79ffa564766d22d3beef7267.jar" />
     </item>
     <item
-        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.awareframework/aware-core/3.4.2/libs/zbar.jar"
+        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/classes-75d793607328ab4d95fdb8bb55671c44f27ac1ea.jar" />
+    </item>
+    <item
+        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.5.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="68c140702c7242d914655bcb3164d9e8c45b84cb">
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/classes-bcfaec99ecbbb69f1490a063b30a6a22b46d7783.jar" />
+    </item>
+    <item
+        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.awareframework/aware-core/3.4.3/libs/zbar.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="0a7b88ba1496a0b4af76069ad40dacd3897149e0">
-        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/zbar-70b528f89428e413eace806e446570225f087126.jar" />
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/zbar-6871a30d285fa4598f144c629a1d215cede4daf9.jar" />
+    </item>
+    <item
+        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.5.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8d736fefa22d896e84a268354b3ed48a42663150">
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/classes-280ffbc3bab69d565cedcf4ef88d553a4038eae4.jar" />
+    </item>
+    <item
+        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.5.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="06a42becc33232ec0ee125161da68c1829c9f8fd">
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/classes-96e23888d37134b7f5d52ccd75231e88cbb1af25.jar" />
+    </item>
+    <item
+        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/internal_impl-22.2.0-72668a720ee22531303b0e411efd607d1c42fdea.jar" />
+    </item>
+    <item
+        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.5.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d405025c600055237c171a0bbabaa49d69696573">
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/classes-3d4db32c3a9083edbc5e3c3eae982cdab9324a7b.jar" />
+    </item>
+    <item
+        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.5.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1a6411087ab88ce5542f593e63a2752b6b0d6f1a">
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/classes-6ca9f0f7b5769a2f77c4173de5828964cc9653f6.jar" />
+    </item>
+    <item
+        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/classes-287f74fcdcb896c5a4b433dd6eab3ff4f1cada83.jar" />
+    </item>
+    <item
+        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.5.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e7b35244f50663b3f8d150714bca9ecd7a290da1">
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/classes-b2951672c4b29d8658851bd76f9c4cb9878f6bd7.jar" />
+    </item>
+    <item
+        jar="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/7.5.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="02bac2dc792d78241077861566f2c82da955e7fa">
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/classes-a829832a7e72cfa582b5523f61a0c8d5effd1351.jar" />
+    </item>
+    <item
+        jar="/Users/Comet/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/Users/Comet/Documents/developments/com.aware.plugin.SolarCharger1/app/build/intermediates/pre-dexed/release/support-annotations-22.2.0-78387c17ac4a106f1330cf26ed03e420f3bcef91.jar" />
     </item>
 
 </items>
