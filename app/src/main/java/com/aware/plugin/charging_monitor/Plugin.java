@@ -70,7 +70,7 @@ public class Plugin extends Aware_Plugin {
 
                 solar_current = Aware.getSetting(getApplicationContext(), Settings.SOLAR_CURRENT);
 
-
+/*
                 Cursor PL = getApplicationContext().getContentResolver().query(Battery_Data.CONTENT_URI, null, null, null, Battery_Data.TIMESTAMP + " DESC LIMIT 1");
                 if (PL != null && PL.moveToFirst()) {
                     int currentLevel = PL.getInt(PL.getColumnIndex(Battery_Data.LEVEL));
@@ -81,9 +81,23 @@ public class Plugin extends Aware_Plugin {
                         if (latest != null && latest.moveToFirst()) {
                             if (latest.getInt(latest.getColumnIndex(Charging_Monitor_Data.PERCENTAGE_END)) == 100)
                             {
+                                Log.d(TAG,"full battery");
+
+                                if (latest != null && !latest.isClosed())
+                                {
+                                    latest.close();
+                                }
+                                if (PL != null && !PL.isClosed()) {
+                                    PL.close();
+                                }
+                                try {
+                                    Thread.sleep(6000);
+                                    //detect once every 6 secs
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
                                 continue;
                             }
-
                         }
                         if (latest != null && !latest.isClosed())
                         {
@@ -95,6 +109,8 @@ public class Plugin extends Aware_Plugin {
                     PL.close();
                 }
 
+                */
+
                 //record when it starts charging
                 Cursor BC = getApplicationContext().getContentResolver().query(Battery_Charges.CONTENT_URI, null, null, null, Battery_Charges.TIMESTAMP + " DESC LIMIT 1");
                 if (BC != null && BC.moveToFirst()) {
@@ -104,6 +120,7 @@ public class Plugin extends Aware_Plugin {
                     long time_spent = time_now - time_start;  //mseconds here
                     if(time_spent<20*1000.0) {
                         percentage_end = percentage_start;
+                        Log.d(TAG,"charging start with" + percentage_end);
                     }
                 }
                 if (BC != null && !BC.isClosed()) {
@@ -269,6 +286,7 @@ public class Plugin extends Aware_Plugin {
     @Override
     public void onDestroy() {
         super.onDestroy();
+
         Aware.setSetting(this, Aware_Preferences.STATUS_BATTERY, false);
         Aware.setSetting(this, Settings.STATUS_PLUGIN_CHARGING_MONITOR, false);
 

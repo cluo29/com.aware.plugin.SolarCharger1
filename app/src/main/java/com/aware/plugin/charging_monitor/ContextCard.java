@@ -7,6 +7,7 @@ import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -28,13 +29,15 @@ public class ContextCard implements IContextCard {
     private Runnable uiChanger = new Runnable() {
         @Override
         public void run() {
-
+            Log.d("debug","thread runs");
             boolean is_charging = false;
             Cursor currentCharging = sContext.getContentResolver().query(Battery_Provider.Battery_Data.CONTENT_URI, new String[]{Battery_Provider.Battery_Data.STATUS}, null, null, Battery_Provider.Battery_Data.TIMESTAMP + " DESC LIMIT 1");
             if( currentCharging != null && currentCharging.moveToFirst() ) {
-                is_charging = (currentCharging.getInt(currentCharging.getColumnIndex(Battery_Provider.Battery_Data.STATUS))!=3);
+                Log.d("debug", "isCharging " + currentCharging.getInt(currentCharging.getColumnIndex(Battery_Provider.Battery_Data.STATUS)));
+                        is_charging = (currentCharging.getInt(currentCharging.getColumnIndex(Battery_Provider.Battery_Data.STATUS)) != 3);
             }
-            if( currentCharging != null && ! currentCharging.isClosed() ) currentCharging.close();
+            if( currentCharging != null && ! currentCharging.isClosed() )
+                currentCharging.close();
 
             Cursor latest = sContext.getContentResolver().query(Provider.Charging_Monitor_Data.CONTENT_URI, null, null, null, Charging_Monitor_Data.TIMESTAMP + " DESC LIMIT 1");
             if (latest != null && latest.moveToFirst()) {
@@ -74,7 +77,8 @@ public class ContextCard implements IContextCard {
                 counter_txt5.setVisibility(View.GONE);
 
             }
-            if (latest != null && !latest.isClosed()) latest.close();
+            if (latest != null && !latest.isClosed())
+                latest.close();
 
             uiRefresher.postDelayed(uiChanger, refresh_interval);
         }
